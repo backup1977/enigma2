@@ -8,6 +8,7 @@ from Components.PluginComponent import plugins
 from Components.PluginList import *
 from Components.Label import Label
 from Components.Language import language
+from Components.ServiceList import refreshServiceList
 from Components.Harddisk import harddiskmanager
 from Components.Sources.StaticText import StaticText
 from Components.SystemInfo import SystemInfo, hassoftcaminstalled
@@ -299,6 +300,9 @@ class PluginDownloadBrowser(Screen):
 			self["text"].setText(_("Reloading bouquets and services..."))
 			eDVBDB.getInstance().reloadBouquets()
 			eDVBDB.getInstance().reloadServicelist()
+			from Components.ParentalControl import parentalControl
+			parentalControl.open()
+			refreshServiceList()
 		if self.check_softcams:
 			SystemInfo["HasSoftcamInstalled"] = hassoftcaminstalled()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
@@ -352,10 +356,12 @@ class PluginDownloadBrowser(Screen):
 				self.doRemove(self.installFinished, self["list"].l.getCurrentSelection()[0].name)
 
 	def doRemove(self, callback, pkgname):
-		self.session.openWithCallback(callback, Console, cmdlist = [self.ipkg_remove + Ipkg.opkgExtraDestinations() + " " + self.PLUGIN_PREFIX + pkgname, "sync"], closeOnSuccess = True)
+		pkgname = self.PLUGIN_PREFIX + pkgname
+		self.session.openWithCallback(callback, Console, cmdlist = [self.ipkg_remove + Ipkg.opkgExtraDestinations() + " " + pkgname, "sync"], skin="Console_Pig")
 
 	def doInstall(self, callback, pkgname):
-		self.session.openWithCallback(callback, Console, cmdlist = [self.ipkg_install + " " + self.PLUGIN_PREFIX + pkgname, "sync"], closeOnSuccess = True)
+		pkgname = self.PLUGIN_PREFIX + pkgname
+		self.session.openWithCallback(callback, Console, cmdlist = [self.ipkg_install + " " + pkgname, "sync"], skin="Console_Pig")
 
 	def runSettingsRemove(self, val):
 		if val:

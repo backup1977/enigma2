@@ -460,8 +460,6 @@ class RecordTimerEntry(timer.TimerEntry, object):
 							Notifications.AddPopup(text=_("Zapped to timer service %s!") % self.service_ref.getServiceName(), type=MessageBox.TYPE_INFO, timeout=5)
 				return True
 			else:
-				self.log(11, "start recording")
-
 				if RecordTimerEntry.wasInDeepStandby:
 					RecordTimerEntry.keypress()
 					if Screens.Standby.inStandby: #In case some plugin did put the receiver already in standby
@@ -471,7 +469,7 @@ class RecordTimerEntry(timer.TimerEntry, object):
 				record_res = self.record_service.start()
 				self.setRecordingPreferredTuner(setdefault=True)
 				if record_res:
-					self.log(13, "start record returned %d" % record_res)
+					self.log(13, "start recording error: %d" % record_res)
 					self.do_backoff()
 					# retry
 					self.begin = time() + self.backoff
@@ -480,17 +478,17 @@ class RecordTimerEntry(timer.TimerEntry, object):
 				# Tell the trashcan we started recording. The trashcan gets events,
 				# but cannot tell what the associated path is.
 				Trashcan.instance.markDirty(self.Filename)
-
+				self.log_tuner(11, "start")
 				return True
 
 		elif next_state == self.StateEnded:
 			old_end = self.end
 			self.ts_dialog = None
 			if self.setAutoincreaseEnd():
-				self.log(12, "autoincrase recording %d minute(s)" % int((self.end - old_end)/60))
+				self.log(12, "autoincrease recording %d minute(s)" % int((self.end - old_end)/60))
 				self.state -= 1
 				return True
-			self.log(12, "stop recording")
+			self.log_tuner(12, "stop")
 			if not self.justplay:
 				NavigationInstance.instance.stopRecordService(self.record_service)
 				self.record_service = None
@@ -638,6 +636,13 @@ class RecordTimerEntry(timer.TimerEntry, object):
 			NavigationInstance.instance.playService(self.service_ref.ref)
 		else:
 			self.log(14, "user didn't want to zap away, record will probably fail")
+
+	# Report the tuner that the current recording is using
+	def log_tuner(self, level, state):
+		feinfo = self.record_service and hasattr(self.record_service, "frontendInfo") and self.record_service.frontendInfo()
+		fedata = feinfo and hasattr(feinfo, "getFrontendData") and feinfo.getFrontendData()
+		tuner_info = fedata and "tuner_number" in fedata and chr(ord('A') + fedata.get("tuner_number")) or "(fallback) stream"
+		self.log(level, "%s recording on tuner: %s" % (state, tuner_info))
 
 	def timeChanged(self):
 		old_prepare = self.start_prepare
@@ -1009,6 +1014,10 @@ class RecordTimer(timer.Timer):
 		elif timersanitycheck.doubleCheck():
 			print "[RecordTimer] ignore double timer..."
 			return None
+		elif not loadtimer and not entry.disabled and not entry.justplay and entry.state == 0 and not (entry.service_ref and '%3a//' in entry.service_ref.ref.toString()):
+			for x in check_timer_list:
+				if x.begin == entry.begin and not x.disabled and not x.justplay and not (x.service_ref and '%3a//' in x.service_ref.ref.toString()):
+					entry.begin += 1
 		entry.timeChanged()
 		print "[Timer] Record " + str(entry)
 		entry.Timer = self

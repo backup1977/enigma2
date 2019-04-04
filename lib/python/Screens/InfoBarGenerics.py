@@ -19,7 +19,7 @@ from EpgSelection import EPGSelection
 from Plugins.Plugin import PluginDescriptor
 
 from Screen import Screen
-from Screens import ScreenSaver
+from Screens.ScreenSaver import InfoBarScreenSaver
 from Screens import Standby
 from Screens.ChoiceBox import ChoiceBox
 from Screens.Dish import Dish
@@ -44,14 +44,12 @@ from enigma import eTimer, eServiceCenter, eDVBServicePMTHandler, iServiceInform
 from time import time, localtime, strftime
 import os
 from bisect import insort
+from sys import maxint
 
 from RecordTimer import RecordTimerEntry, RecordTimer, findSafeRecordPath
 
 # hack alert!
 from Menu import MainMenu, mdom
-
-# sys.maxint on 64bit (2**63-1) fails with OverflowError on eActionMap.bindAction use 32bit value (2**31-1)
-maxint = 2147483647
 
 def isStandardInfoBar(self):
 	return self.__class__.__name__ == "InfoBar"
@@ -124,6 +122,12 @@ def loadResumePoints():
 resumePointCache = loadResumePoints()
 resumePointCacheLast = int(time())
 
+whitelist_vbi = None
+def reload_whitelist_vbi():
+	global whitelist_vbi
+	whitelist_vbi = [line.strip() for line in open('/etc/enigma2/whitelist_vbi', 'r').readlines()] if os.path.isfile('/etc/enigma2/whitelist_vbi') else []
+reload_whitelist_vbi()
+
 class InfoBarDish:
 	def __init__(self):
 		self.dishDialog = self.session.instantiateDialog(Dish)
@@ -162,55 +166,6 @@ class InfoBarUnhandledKey:
 			self.unhandledKeyDialog.show()
 			self.hideUnhandledKeySymbolTimer.start(2000, True)
 
-class InfoBarScreenSaver:
-	def __init__(self):
-		self.onExecBegin.append(self.__onExecBegin)
-		self.onExecEnd.append(self.__onExecEnd)
-		self.screenSaverTimer = eTimer()
-		self.screenSaverTimer.callback.append(self.screensaverTimeout)
-		self.screensaver = self.session.instantiateDialog(ScreenSaver.Screensaver)
-		self.onLayoutFinish.append(self.__layoutFinished)
-
-	def __layoutFinished(self):
-		self.screensaver.hide()
-
-	def __onExecBegin(self):
-		self.ScreenSaverTimerStart()
-
-	def __onExecEnd(self):
-		if self.screensaver.shown:
-			self.screensaver.hide()
-			eActionMap.getInstance().unbindAction('', self.keypressScreenSaver)
-		self.screenSaverTimer.stop()
-
-	def ScreenSaverTimerStart(self):
-		time = int(config.usage.screen_saver.value)
-		flag = self.seekstate[0]
-		if not flag:
-			ref = self.session.nav.getCurrentlyPlayingServiceOrGroup()
-			if ref and not (hasattr(self.session, "pipshown") and self.session.pipshown):
-				ref = ref.toString().split(":")
-				flag = ref[2] == "2" or os.path.splitext(ref[10])[1].lower() in AUDIO_EXTENSIONS
-		if time and flag:
-			self.screenSaverTimer.startLongTimer(time)
-		else:
-			self.screenSaverTimer.stop()
-
-	def screensaverTimeout(self):
-		if self.execing and not Standby.inStandby and not Standby.inTryQuitMainloop:
-			self.hide()
-			if hasattr(self, "pvrStateDialog"):
-				self.pvrStateDialog.hide()
-			self.screensaver.show()
-			eActionMap.getInstance().bindAction('', -maxint - 1, self.keypressScreenSaver)
-
-	def keypressScreenSaver(self, key, flag):
-		if flag:
-			self.screensaver.hide()
-			self.show()
-			self.ScreenSaverTimerStart()
-			eActionMap.getInstance().unbindAction('', self.keypressScreenSaver)
-
 class HideVBILine(Screen):
 	def __init__(self, session):
 		self.skin = """<screen position="0,0" size="%s,%s" flags="wfNoBorder" zPosition="1"/>""" % (getDesktop(0).size().width(), getDesktop(0).size().height() / 360 + 1)
@@ -228,7 +183,6 @@ class InfoBarShowHide(InfoBarScreenSaver):
 	STATE_HIDING = 1
 	STATE_SHOWING = 2
 	STATE_SHOWN = 3
-	FLAG_HIDE_VBI = 512
 	FLAG_CENTER_DVB_SUBS = 2048
 
 	def __init__(self):
@@ -266,6 +220,10 @@ class InfoBarShowHide(InfoBarScreenSaver):
 			self.secondInfoBarScreenSimple.show()
 			self.actualSecondInfoBarScreen = config.usage.show_simple_second_infobar.value and self.secondInfoBarScreenSimple.skinAttributes and self.secondInfoBarScreenSimple or self.secondInfoBarScreen
 
+		from Screens.InfoBar import InfoBar
+		InfoBarInstance = InfoBar.instance
+		if InfoBarInstance:
+			InfoBarInstance.hideVBILineScreen.hide()
 		self.hideVBILineScreen = self.session.instantiateDialog(HideVBILine)
 		self.hideVBILineScreen.show()
 
@@ -404,19 +362,21 @@ class InfoBarShowHide(InfoBarScreenSaver):
 		if self.execing:
 			self.startHideTimer()
 
-	def checkHideVBI(self):
-		service = self.session.nav.getCurrentlyPlayingServiceReference()
+	def checkHideVBI(self, service = None):
+		service = service or self.session.nav.getCurrentlyPlayingServiceReference()
 		servicepath = service and service.getPath()
-		if servicepath and servicepath.startswith("/"):
-			if service.toString().startswith("1:"):
-				info = eServiceCenter.getInstance().info(service)
-				service = info and info.getInfoString(service, iServiceInformation.sServiceref)
-				return service and eDVBDB.getInstance().getFlag(eServiceReference(service)) & self.FLAG_HIDE_VBI and True
-			else:
-				return ".hidvbi." in servicepath.lower()
-		service = self.session.nav.getCurrentService()
-		info = service and service.info()
-		return info and info.getInfo(iServiceInformation.sHideVBI)
+		if servicepath:
+			if servicepath.startswith("/"):
+				if service.toString().startswith("1:"):
+					info = eServiceCenter.getInstance().info(service)
+					service = info and info.getInfoString(service, iServiceInformation.sServiceref)
+					service = service and eServiceReference(service)
+					if service:
+						print service, service and service.toString()
+					return service and ":".join(service.toString().split(":")[:11]) in whitelist_vbi
+				else:
+					return ".hidevbi." in servicepath.lower()
+		return service and service.toString() in whitelist_vbi
 
 	def showHideVBI(self):
 		if self.checkHideVBI():
@@ -424,15 +384,16 @@ class InfoBarShowHide(InfoBarScreenSaver):
 		else:
 			self.hideVBILineScreen.hide()
 
-	def ToggleHideVBI(self):
-		service = self.session.nav.getCurrentlyPlayingServiceReference()
-		servicepath = service and service.getPath()
-		if not servicepath:
-			if eDVBDB.getInstance().getFlag(service) & self.FLAG_HIDE_VBI:
-				eDVBDB.getInstance().removeFlag(service, self.FLAG_HIDE_VBI)
+	def ToggleHideVBI(self, service = None):
+		service = service or self.session.nav.getCurrentlyPlayingServiceReference()
+		if service:
+			service = service.toString()
+			global whitelist_vbi
+			if service in whitelist_vbi:
+				whitelist_vbi.remove(service)
 			else:
-				eDVBDB.getInstance().addFlag(service, self.FLAG_HIDE_VBI)
-			eDVBDB.getInstance().reloadBouquets()
+				whitelist_vbi.append(service)
+			open('/etc/enigma2/whitelist_vbi', 'w').write('\n'.join(whitelist_vbi))
 			self.showHideVBI()
 
 class BufferIndicator(Screen):
@@ -2969,7 +2930,10 @@ class InfoBarNotifications:
 				if "channels" in config.usage.remote_fallback_import.value:
 					eDVBDB.getInstance().reloadBouquets()
 					eDVBDB.getInstance().reloadServicelist()
+					from Components.ParentalControl import parentalControl
+					parentalControl.open()
 					refreshServiceList()
+					reload_whitelist_vbi()
 				if "epg" in config.usage.remote_fallback_import.value:
 					eEPGCache.getInstance().load()
 				if not(n[4].endswith("NOK") and config.usage.remote_fallback_nok.value or config.usage.remote_fallback_ok.value):
@@ -3512,10 +3476,10 @@ class InfoBarPowersaver:
 
 	def sleepTimerTimeout(self):
 		if not Screens.Standby.inStandby:
-			list = [ (_("Yes"), True), (_("Extend sleeptimer 15 minutes"), "extend"), (_("No"), False) ]
+			list = [ (_("No"), False), (_("Extend sleeptimer 15 minutes"), "extend"), (_("Yes"), True) ]
 			message = _("Your receiver will got to stand by due to the sleeptimer.")
 			message += "\n" + _("Do you want this?")
-			self.session.openWithCallback(self.sleepTimerTimeoutCallback, MessageBox, message, timeout=60, simple=True, list=list, default=False, timeout_default=True)
+			self.session.openWithCallback(self.sleepTimerTimeoutCallback, MessageBox, message, timeout=60, simple=True, list=list, timeout_default=True)
 
 	def sleepTimerTimeoutCallback(self, answer):
 		if answer == "extend":

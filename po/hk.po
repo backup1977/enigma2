@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-13 09:42+0200\n"
+"POT-Creation-Date: 2018-12-17 16:32+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: 王彪 <satfan@163.com>\n"
 "Language-Team: 中國\n"
@@ -60,6 +60,12 @@ msgstr ""
 "\n"
 "按OK鍵確認."
 
+#, fuzzy
+msgid ""
+"\n"
+"Press OK or Exit to abort!"
+msgstr "按OK鍵開始掃描."
+
 msgid ""
 "\n"
 "Recording in progress."
@@ -75,11 +81,6 @@ msgstr ""
 msgid ""
 "\n"
 "Restore your receiver settings."
-msgstr ""
-
-msgid ""
-"\n"
-"Restore your receiver with a new firmware."
 msgstr ""
 
 msgid ""
@@ -361,6 +362,7 @@ msgstr ""
 #, python-format
 msgid ""
 "%s\n"
+"Press ok for multiboot selection\n"
 "Press exit to close"
 msgstr ""
 
@@ -782,9 +784,6 @@ msgstr ""
 msgid "Add recording (stop after current event)"
 msgstr ""
 
-msgid "Add seperate receiver URL for import"
-msgstr ""
-
 msgid "Add service"
 msgstr ""
 
@@ -893,6 +892,12 @@ msgstr ""
 msgid "Allocate unused memory index"
 msgstr ""
 
+msgid "Allow 10bit"
+msgstr ""
+
+msgid "Allow 12bit"
+msgstr ""
+
 msgid "Allow quit movieplayer with exit"
 msgstr ""
 
@@ -903,6 +908,9 @@ msgid "Allow subtitle language to equal audio language"
 msgstr ""
 
 msgid "Allow subtitles for hearing impaired"
+msgstr ""
+
+msgid "Allow unsupported modes"
 msgstr ""
 
 msgid "Alpha"
@@ -1122,6 +1130,10 @@ msgid "Australia"
 msgstr "澳大利亞"
 
 #, fuzzy
+msgid "Australian"
+msgstr "澳大利亞"
+
+#, fuzzy
 msgid "Austria"
 msgstr "澳大利亞"
 
@@ -1162,10 +1174,24 @@ msgstr ""
 msgid "Auto scart switching"
 msgstr "自動切換錄影機"
 
+#, fuzzy, python-format
+msgid "Autoinstalling %s"
+msgstr "正在安裝"
+
+msgid "Autoinstalling Completed"
+msgstr ""
+
+msgid "Autoinstalling please wait for packages being updated"
+msgstr ""
+
 msgid "Automatic"
 msgstr "自動"
 
 msgid "Automatic Scan"
+msgstr "自動掃描"
+
+#, fuzzy
+msgid "Automatic bookmarks"
 msgstr "自動掃描"
 
 msgid "Automatic scan"
@@ -1178,6 +1204,10 @@ msgid "Automatically turn on external subtitles"
 msgstr ""
 
 msgid "Available format variables"
+msgstr "可用的格式變數"
+
+#, fuzzy
+msgid "Available locales are:"
 msgstr "可用的格式變數"
 
 msgid "Azerbaijan"
@@ -1278,6 +1308,10 @@ msgstr "當電影快要結束時"
 
 msgid "Belarus"
 msgstr ""
+
+#, fuzzy
+msgid "Belgian"
+msgstr "挪威語"
 
 msgid "Belgium"
 msgstr ""
@@ -1458,6 +1492,9 @@ msgstr "加拿大"
 
 msgid "Cancel"
 msgstr "取消"
+
+msgid "Cancel any text changes and exit"
+msgstr ""
 
 msgid "Cancelled upon user request"
 msgstr ""
@@ -2113,7 +2150,7 @@ msgstr ""
 msgid "Constellation & FFT mode"
 msgstr ""
 
-msgid "Consult your Unicable device spec sheet for this information."
+msgid "Consult your SCR device spec sheet for this information."
 msgstr ""
 
 msgid "Consult your motor's spec sheet for this information, or leave the default setting."
@@ -2124,9 +2161,6 @@ msgstr "容量不適合DVD!"
 
 msgid "Continue"
 msgstr ""
-
-msgid "Continue in background"
-msgstr "繼續後臺運行"
 
 msgid "Continue playback"
 msgstr ""
@@ -2155,7 +2189,7 @@ msgstr ""
 msgid "Could not find installed channel list."
 msgstr ""
 
-msgid "Could not find suitable media - Please insert a media (e.g. USB stick) and try again!"
+msgid "Could not find suitable media - Please remove some downloaded images or insert a media (e.g. USB stick) with sufficiant free space and try again!"
 msgstr ""
 
 msgid "Could not load medium! No disc inserted?"
@@ -2185,7 +2219,7 @@ msgstr "創建DVD-ISO"
 msgid "Create new folder and exit"
 msgstr ""
 
-msgid "Create seperate radio userbouquet"
+msgid "Create separate radio userbouquet"
 msgstr ""
 
 #, python-format
@@ -2381,6 +2415,9 @@ msgstr "預設錄影位置"
 msgid "Default settings"
 msgstr "預設設定"
 
+msgid "Define the location of the EPG Cache file."
+msgstr ""
+
 msgid "Delay after change voltage before switch command"
 msgstr ""
 
@@ -2466,6 +2503,12 @@ msgstr ""
 msgid "Delete saved playlist"
 msgstr ""
 
+msgid "Delete the character to the left of text buffer cursor"
+msgstr ""
+
+msgid "Delete the character under the text buffer cursor"
+msgstr ""
+
 msgid "Delete timer"
 msgstr ""
 
@@ -2493,6 +2536,9 @@ msgstr "描述"
 
 msgid "Deselect"
 msgstr "取消"
+
+msgid "Destination of fallback remote receiver"
+msgstr ""
 
 msgid "Details for plugin: "
 msgstr ""
@@ -2599,6 +2645,9 @@ msgstr ""
 msgid "Display message before playing next movie"
 msgstr ""
 
+msgid "Display movie length in movielist (except single line style)."
+msgstr ""
+
 msgid "Display setup"
 msgstr ""
 
@@ -2632,6 +2681,9 @@ msgid "Do not change"
 msgstr ""
 
 msgid "Do not record"
+msgstr ""
+
+msgid "Do not show file extensions for registered multimedia files."
 msgstr ""
 
 msgid "Do nothing"
@@ -2788,6 +2840,10 @@ msgstr "下載中"
 msgid "Downloading plugin information. Please wait..."
 msgstr "正在下載插件列表,請稍候..."
 
+#, fuzzy
+msgid "Drop unconfigured satellites"
+msgstr "移除選定的衛星"
+
 msgid "Dutch"
 msgstr "荷蘭語"
 
@@ -2880,6 +2936,9 @@ msgstr ""
 msgid "Electronic Program Guide"
 msgstr "電子節目指南"
 
+msgid "Empty slot"
+msgstr ""
+
 msgid "Enable"
 msgstr "啟用"
 
@@ -2930,6 +2989,9 @@ msgid "Enable fallback remote receiver"
 msgstr ""
 
 msgid "Enable freesat EPG"
+msgstr ""
+
+msgid "Enable import timer from fallback tuner"
 msgstr ""
 
 msgid "Enable multiple bouquets"
@@ -3003,7 +3065,16 @@ msgstr "反向:"
 msgid "Enigma2 skin selector"
 msgstr ""
 
+msgid "Enter"
+msgstr ""
+
+msgid "Enter IP address"
+msgstr ""
+
 msgid "Enter PIN"
+msgstr ""
+
+msgid "Enter URL"
 msgstr ""
 
 msgid "Enter if you are in the east or west hemisphere."
@@ -3019,6 +3090,9 @@ msgid "Enter persistent PIN code"
 msgstr ""
 
 msgid "Enter pin code"
+msgstr ""
+
+msgid "Enter text and exit"
 msgstr ""
 
 msgid "Enter the frequency at which you LNB switches between low band and high band. For more information consult the spec sheet of your LNB."
@@ -3094,6 +3168,12 @@ msgid "Error when writing epg.dat on server"
 msgstr ""
 
 msgid "Error while retreiving epg.dat from server"
+msgstr ""
+
+#, python-format
+msgid ""
+"Error while retreiving fallback timer information\n"
+"%s"
 msgstr ""
 
 msgid "Error while retreiving location of epg.dat on server"
@@ -3324,10 +3404,25 @@ msgstr ""
 msgid "Falkland Islands (Malvinas)"
 msgstr ""
 
+msgid "Fallback Timer"
+msgstr ""
+
+msgid "Fallback remote receiver"
+msgstr ""
+
+msgid "Fallback remote receiver IP"
+msgstr ""
+
+msgid "Fallback remote receiver Port"
+msgstr ""
+
 msgid "Fallback remote receiver URL"
 msgstr ""
 
 msgid "Fallback remote receiver setup"
+msgstr ""
+
+msgid "Fallback tuner setup"
 msgstr ""
 
 #, python-format
@@ -3425,6 +3520,10 @@ msgid "Flash image"
 msgstr "安裝失敗"
 
 #, fuzzy
+msgid "Flashing Image"
+msgstr "安裝失敗"
+
+#, fuzzy
 msgid "Flashing image succesfull"
 msgstr "移除完成"
 
@@ -3512,7 +3611,7 @@ msgstr ""
 msgid "Full transparency"
 msgstr ""
 
-msgid "Fulview resulution"
+msgid "Full view resolution"
 msgstr ""
 
 msgid "Function of OK button"
@@ -3667,6 +3766,9 @@ msgstr "希臘語"
 msgid "Greek"
 msgstr "希臘語"
 
+msgid "Greek (Modern)"
+msgstr ""
+
 msgid "Green"
 msgstr ""
 
@@ -3708,9 +3810,6 @@ msgstr ""
 msgid "HD list"
 msgstr ""
 
-msgid "HD11/HD51/HD1100/HD1200/HD1265/HD1500/HD500C/HD530C/VS1000/VS1500/et7x00/et8500/et7000mini"
-msgstr ""
-
 msgid "HD2400"
 msgstr ""
 
@@ -3741,8 +3840,21 @@ msgstr ""
 msgid "HDR10"
 msgstr ""
 
+msgid "HDR10 support"
+msgstr ""
+
+msgid "HDx1/HD1xxx/HD5x0C/VS1x00/et7x00/et8500/et7000mini"
+msgstr ""
+
+msgid "HELP"
+msgstr ""
+
 msgid "HLG"
 msgstr ""
+
+#, fuzzy
+msgid "HLG support"
+msgstr "不支援的"
 
 #, fuzzy
 msgid "Haiti"
@@ -3782,6 +3894,9 @@ msgid "Helps setting up your antenna"
 msgstr ""
 
 msgid "Hidden network"
+msgstr ""
+
+msgid "Hide"
 msgstr ""
 
 msgid "Hide channel list in radio mode"
@@ -3880,7 +3995,16 @@ msgstr " 是否開始頻道掃描?"
 msgid "IDLE"
 msgstr ""
 
+msgid "INFO"
+msgstr ""
+
+msgid "INS"
+msgstr ""
+
 msgid "IP address"
+msgstr ""
+
+msgid "IP of fallback remote receiver"
 msgstr ""
 
 msgid "ISO file is too large for this filesystem!"
@@ -3897,6 +4021,18 @@ msgid "Icons"
 msgstr ""
 
 msgid "If enabled, display shows 12 chars instead 8, but in latin-1/translit only."
+msgstr ""
+
+msgid "If enabled, then there will be displayed icons for new/unseen items too."
+msgstr ""
+
+msgid "If is disabled, then after Copy/Move will not be target directory stored into bookmarks."
+msgstr ""
+
+msgid "If is enabled and movie playback is finished, then after return to movielist will not be automaticaly start service playback."
+msgstr ""
+
+msgid "If set as 'Yes', then audiofiles are played in 'list mode' only, instead in full screen player."
 msgstr ""
 
 msgid "If set to 'yes' signal values (SNR, etc) will be calculated from API V3. This is an old API version that has now been superseded."
@@ -3978,6 +4114,10 @@ msgstr ""
 
 msgid "Include AIT in http streams"
 msgstr ""
+
+#, fuzzy
+msgid "Include CI assignment"
+msgstr "CI-證書"
 
 msgid "Include ECM in http streams"
 msgstr ""
@@ -4073,12 +4213,6 @@ msgstr ""
 msgid "Install"
 msgstr "安裝"
 
-msgid "Install a new image with a USB stick"
-msgstr "安裝一個新的韧體到U盤"
-
-msgid "Install a new image with your web browser"
-msgstr "通過網頁流覽器安裝一個新的韧體"
-
 msgid "Install channel list"
 msgstr ""
 
@@ -4157,6 +4291,10 @@ msgstr "IPKG"
 
 msgid "Iran (Islamic Republic of)"
 msgstr ""
+
+#, fuzzy
+msgid "Iran, Islamic Republic"
+msgstr "捷克共和國"
 
 msgid "Iraq"
 msgstr ""
@@ -4251,6 +4389,9 @@ msgstr "事件"
 
 msgid "Keyboard"
 msgstr "鍵盤佈局"
+
+msgid "Keyboard data entry"
+msgstr ""
 
 msgid "Keyboard map"
 msgstr ""
@@ -4423,6 +4564,9 @@ msgstr "立陶宛語"
 msgid "Lithuanian"
 msgstr "立陶宛語"
 
+msgid "Live decoder"
+msgstr ""
+
 msgid "Load"
 msgstr "載入"
 
@@ -4438,8 +4582,14 @@ msgstr ""
 msgid "Local network"
 msgstr ""
 
+msgid "Locale"
+msgstr ""
+
 msgid "Location"
 msgstr "位置"
+
+msgid "Location EPG Cache file"
+msgstr ""
 
 msgid "Location for instant recordings"
 msgstr "即時錄製位置"
@@ -4466,6 +4616,9 @@ msgid "Longitude"
 msgstr "經度"
 
 msgid "Loop through from"
+msgstr ""
+
+msgid "Lower case"
 msgstr ""
 
 msgid "Luxembourg"
@@ -4710,6 +4863,30 @@ msgstr "移動畫中畫"
 msgid "Move east"
 msgstr "東移"
 
+msgid "Move the text buffer cursor left"
+msgstr ""
+
+msgid "Move the text buffer cursor right"
+msgstr ""
+
+msgid "Move the text buffer cursor to the first character"
+msgstr ""
+
+msgid "Move the text buffer cursor to the last character"
+msgstr ""
+
+msgid "Move the virtual keyboard cursor down"
+msgstr ""
+
+msgid "Move the virtual keyboard cursor left"
+msgstr ""
+
+msgid "Move the virtual keyboard cursor right"
+msgstr ""
+
+msgid "Move the virtual keyboard cursor up"
+msgstr ""
+
 msgid "Move to position X"
 msgstr ""
 
@@ -4730,10 +4907,6 @@ msgstr ""
 
 msgid "Movie location"
 msgstr "電影位置"
-
-#, fuzzy
-msgid "Movie manager"
-msgstr "文件管理器"
 
 msgid "Movie selection"
 msgstr ""
@@ -4955,9 +5128,6 @@ msgstr "未找到硬碟或硬碟未初始化！"
 msgid "No age block"
 msgstr ""
 
-msgid "No backup needed"
-msgstr "不需要備份"
-
 msgid ""
 "No data on transponder!\n"
 "(Timeout reading PAT)"
@@ -5091,13 +5261,7 @@ msgstr "否, 重新開始播放這個視頻"
 msgid "No, do not flash image"
 msgstr "否, 什麼也不做."
 
-msgid "No, do nothing."
-msgstr "否, 什麼也不做."
-
 msgid "No, except Wakeup timer"
-msgstr ""
-
-msgid "No, just start my receiver"
 msgstr ""
 
 msgid "No, never"
@@ -5185,11 +5349,11 @@ msgstr ""
 msgid "Number of repeating text on display."
 msgstr ""
 
+msgid "Number or SMS style data entry"
+msgstr ""
+
 msgid "OK"
 msgstr "OK"
-
-msgid "OK, guide me through the upgrade process"
-msgstr "OK, 引導我的升級過程"
 
 msgid "ONID"
 msgstr ""
@@ -5204,6 +5368,9 @@ msgid "OSD settings"
 msgstr ""
 
 msgid "OSD transparency"
+msgstr ""
+
+msgid "OVR"
 msgstr ""
 
 msgid "Off"
@@ -5233,7 +5400,7 @@ msgstr ""
 msgid "One"
 msgstr "1"
 
-msgid "Only change this setting if you are using a Unicable device that has been reprogrammed with a custom programmer. For further information check with the person that reprogrammed the device."
+msgid "Only change this setting if you are using a SCR device that has been reprogrammed with a custom programmer. For further information check with the person that reprogrammed the device."
 msgstr ""
 
 msgid "Only extensions."
@@ -5301,6 +5468,9 @@ msgstr ""
 
 msgid "PAL"
 msgstr "PAL"
+
+msgid "PCM"
+msgstr ""
 
 msgid "PCR PID"
 msgstr ""
@@ -5441,10 +5611,10 @@ msgstr "播放"
 msgid "Play DVD"
 msgstr "播放DVD"
 
-msgid "Play audio in background"
+msgid "Play audio-CD..."
 msgstr ""
 
-msgid "Play audio-CD..."
+msgid "Play audiofiles in list mode"
 msgstr ""
 
 msgid "Play back media files"
@@ -5492,6 +5662,9 @@ msgid ""
 msgstr ""
 "請設定或核實填寫您的功能變數名稱伺服器.\n"
 "準備好後按OK繼續."
+
+msgid "Please configure the fallback tuner setup?"
+msgstr ""
 
 msgid ""
 "Please configure your internet connection by filling out the required values.\n"
@@ -5631,6 +5804,9 @@ msgstr "請選擇調諧器 B."
 msgid "Please set up tuner R"
 msgstr "請選擇調諧器 B."
 
+msgid "Please setup the following basic configs!"
+msgstr ""
+
 msgid ""
 "Please use direction keys to move the PiP window.\n"
 "Press Bouquet +/- to resize the window.\n"
@@ -5725,6 +5901,9 @@ msgstr "埠 C"
 
 msgid "Port D"
 msgstr "埠 D"
+
+msgid "Port of fallback remote receiver"
+msgstr ""
 
 #, fuzzy
 msgid "Portugal"
@@ -5856,6 +6035,10 @@ msgstr ""
 
 msgid "Press OK to select a provider."
 msgstr ""
+
+#, fuzzy
+msgid "Press OK to select a service."
+msgstr "請選擇一個字幕..."
 
 msgid "Press OK to select satellites"
 msgstr ""
@@ -6026,6 +6209,10 @@ msgstr "退出字幕快速切換?"
 
 msgid "Really reboot now?"
 msgstr "立即重啟(Reboot)?"
+
+#, fuzzy
+msgid "Really restart in debug mode now?"
+msgstr "立即重啟(Restart)?"
 
 msgid "Really restart now?"
 msgstr "立即重啟(Restart)?"
@@ -6301,6 +6488,9 @@ msgstr "從這裏開始剪輯"
 msgid "Restart enigma"
 msgstr ""
 
+msgid "Restart enigma in debug mode"
+msgstr ""
+
 msgid "Restart network"
 msgstr "重啟網路"
 
@@ -6344,11 +6534,11 @@ msgid "Resuming playback"
 msgstr "恢復播放"
 
 #, fuzzy
-msgid "Retreiving image list - Please wait..."
+msgid "Retrieving image list - Please wait..."
 msgstr "正在下載插件資訊, 請稍候..."
 
 #, fuzzy
-msgid "Retreiving image slots - Please wait..."
+msgid "Retrieving image slots - Please wait..."
 msgstr "正在安裝... 請稍候..."
 
 msgid "Return to movie list"
@@ -6474,6 +6664,10 @@ msgstr ""
 
 msgid "Saint Vincent and the Grenadines"
 msgstr ""
+
+#, fuzzy
+msgid "Same as stream"
+msgstr "停止測驗"
 
 msgid "Same resolution as skin"
 msgstr ""
@@ -6693,7 +6887,7 @@ msgstr ""
 msgid "Select 'A' or 'B' if your aerial system requires this, otherwise select 'none'. If you are unsure select 'none'."
 msgstr ""
 
-msgid "Select 'Unicable' if this tuner will use a Unicable device. For all other setups select 'FBC automatic'."
+msgid "Select 'FBC SCR' if this tuner will connect to a SCR (Unicable/JESS) device. For all other setups select 'FBC automatic'."
 msgstr ""
 
 msgid "Select 'band' if using a 'universal' LNB, otherwise consult your LNB spec sheet."
@@ -6708,7 +6902,7 @@ msgstr ""
 msgid "Select 'provider' to scan from the predefined list of cable multiplexes. Select 'bands' to only scan certain parts of the spectrum. Select 'steps' to scan in steps of a particular frequency bandwidth."
 msgstr ""
 
-msgid "Select 'yes' if this tuner is connected to the Unicable device through another tuner, otherwise select 'no'."
+msgid "Select 'yes' if this tuner is connected to the SCR device through another tuner, otherwise select 'no'."
 msgstr ""
 
 msgid "Select 'yes' to choose what bands or step sizes will be scanned."
@@ -6843,6 +7037,10 @@ msgstr ""
 msgid "Select interface"
 msgstr "選擇介面"
 
+#, fuzzy
+msgid "Select locale"
+msgstr "選擇位置"
+
 msgid "Select location"
 msgstr ""
 
@@ -6874,19 +7072,28 @@ msgstr ""
 msgid "Select target folder"
 msgstr ""
 
-msgid "Select the Unicable channel to be assigned to this tuner. This is a unique value. Be certain that no other device connected to this same Unicable system is allocated to the same Unicable channel."
+msgid "Select the User Band channel to be assigned to this tuner. This is an index into the table of frequencies the SCR switch or SCR LNB uses to pass the requested transponder to the tuner."
 msgstr ""
 
-msgid "Select the format of your Unicable device. Choices are 'SCR Unicable' (Unicable I format), or 'SCR JESS' (Unicable II format)."
+msgid "Select the User Band frequency to be assigned to this tuner. This is the frequency the SCR switch or SCR LNB uses to pass the requested transponder to the tuner."
 msgstr ""
 
-msgid "Select the manufacturer of your Unicable device. If the manufacturer is not listed, set 'SCR' to 'user defined' and enter the device parameters manually according to its spec sheet."
+msgid "Select the User Band to be assigned to this tuner. This is an index into the table of frequencies the SCR switch or SCR LNB uses to pass the requested tranponder to the tuner."
 msgstr ""
 
-msgid "Select the model number of your Unicable device. If the model number is not listed, set 'SCR' to 'user defined' and enter the device parameters manually according to its spec sheet."
+msgid "Select the character or action under the virtual keyboard cursor"
+msgstr ""
+
+msgid "Select the manufacturer of your SCR device. If the manufacturer is not listed, set 'SCR' to 'user defined' and enter the device parameters manually according to its spec sheet."
+msgstr ""
+
+msgid "Select the model number of your SCR device. If the model number is not listed, set 'SCR' to 'user defined' and enter the device parameters manually according to its spec sheet."
 msgstr ""
 
 msgid "Select the movie path"
+msgstr ""
+
+msgid "Select the protocol used by your SCR device. Choices are 'SCR Unicable' (Unicable), or 'SCR JESS' (JESS, also known as Unicable II)."
 msgstr ""
 
 msgid "Select the satellite which is connected to Port-A of your switch. If you are unsure select 'automatic' and the receiver will attempt to determine this for you. If nothing is connected to this port, select 'nothing connected'."
@@ -6913,13 +7120,19 @@ msgstr ""
 msgid "Select the tuner that this loopthrough depends on."
 msgstr ""
 
-msgid "Select the tuner to which the signal cable of the Unicable device is connected."
+msgid "Select the tuner to which the signal cable of the SCR device is connected."
 msgstr ""
 
 msgid "Select the type of LNB/device being used (normally 'Universal'). If your LNB type is not available select 'user defined'."
 msgstr ""
 
-msgid "Select the type of Unicable device you are using."
+msgid "Select the type of Single Cable Reception device you are using."
+msgstr ""
+
+msgid "Select the virtual keyboard locale from a menu"
+msgstr ""
+
+msgid "Select the virtual keyboard shifted character set"
 msgstr ""
 
 msgid "Select upgrade source"
@@ -6936,9 +7149,6 @@ msgstr "設定視頻模式"
 
 msgid "Select wireless network"
 msgstr "選擇無線網路"
-
-msgid "Select yes when you want to import channels and/or EPG from a different URL"
-msgstr ""
 
 #, fuzzy
 msgid "Select your ATSC provider."
@@ -6969,6 +7179,9 @@ msgid "Selecting this option allows you to configure a group of satellites in on
 msgstr ""
 
 msgid "Selects the mode how live tv should be shown on the LCD."
+msgstr ""
+
+msgid "Selects video source displayed on the LCD."
 msgstr ""
 
 msgid "Send 'sourceactive' before zap timers"
@@ -7069,7 +7282,13 @@ msgstr ""
 msgid "Services"
 msgstr "頻道"
 
+msgid "Set CI assignment for detection of available services."
+msgstr ""
+
 msgid "Set PIN"
+msgstr ""
+
+msgid "Set action when movie playback is finished."
 msgstr ""
 
 msgid "Set all hotkey to default?"
@@ -7093,11 +7312,18 @@ msgstr ""
 msgid "Set fps for external subtitles"
 msgstr ""
 
+msgid "Set if You want see status icons, progress bars or nothing."
+msgstr ""
+
 msgid "Set interface as default Interface"
 msgstr "將網卡設為預設"
 
 msgid "Set limits"
 msgstr "設定極限"
+
+#, fuzzy
+msgid "Set movielist type."
+msgstr "返回電影列表"
 
 msgid "Set pin code persistent"
 msgstr ""
@@ -7135,6 +7361,9 @@ msgstr ""
 msgid "Settings"
 msgstr "設定"
 
+msgid "Settings can be different for each directory separately (for non removeable devices only)."
+msgstr ""
+
 msgid "Setup"
 msgstr "設定"
 
@@ -7164,6 +7393,9 @@ msgid "Shellscript"
 msgstr ""
 
 msgid "Short filenames"
+msgstr ""
+
+msgid "Show"
 msgstr ""
 
 msgid "Show Audioselection"
@@ -7558,9 +7790,6 @@ msgstr "軟體管理"
 msgid "Software manager setup"
 msgstr ""
 
-msgid "Software restore"
-msgstr "軟體還原"
-
 msgid "Software update"
 msgstr "軟體升級"
 
@@ -7616,6 +7845,9 @@ msgstr ""
 msgid "Sort order for menu entries"
 msgstr ""
 
+msgid "Sort order for setup entries"
+msgstr ""
+
 msgid "Sort plugins list to default?"
 msgstr ""
 
@@ -7651,6 +7883,12 @@ msgstr "西班牙"
 
 msgid "Spanish"
 msgstr "西班牙語"
+
+msgid "Special 1"
+msgstr ""
+
+msgid "Special 2"
+msgstr ""
 
 msgid "Specify extra timeframe to ignore inactivity sleeptimer"
 msgstr ""
@@ -8150,9 +8388,6 @@ msgstr ""
 msgid "The PIN codes you entered are different."
 msgstr ""
 
-msgid "The backup failed. Please choose a different backup location."
-msgstr "備份操作失敗！請選擇不同的備份位置。"
-
 #, python-format
 msgid ""
 "The current image might not be stable.\n"
@@ -8241,6 +8476,9 @@ msgid ""
 "due to an error in mytest.py"
 msgstr ""
 
+msgid "The user interface of your receiver is restarting in debug mode"
+msgstr ""
+
 msgid ""
 "The wireless LAN plugin is not installed!\n"
 "Please install it and choose what you want to do next."
@@ -8254,12 +8492,6 @@ msgid ""
 msgstr ""
 "WLAN插件未安裝!\n"
 "請先安裝."
-
-msgid "The wizard can backup your current settings. Do you want to do a backup now?"
-msgstr "該嚮導可以備份您當前的設定.您想要做的一個備份嗎？"
-
-msgid "The wizard is finished now."
-msgstr "嚮導已完成設定."
 
 msgid "There are at least "
 msgstr "這裏至少有 "
@@ -8321,6 +8553,9 @@ msgstr ""
 msgid "This option allows you to add the softcam setup in the extensions menu."
 msgstr ""
 
+msgid "This option allows you to alphabetically sort setup menu entries."
+msgstr ""
+
 msgid "This option allows you to boost the blue tones in the picture."
 msgstr ""
 
@@ -8349,6 +8584,18 @@ msgid "This option allows you to enable 3D surround softlimiter."
 msgstr ""
 
 msgid "This option allows you to enable 3D surround sound."
+msgstr ""
+
+msgid "This option allows you to enable or disable the 10 bit color mode"
+msgstr ""
+
+msgid "This option allows you to enable or disable the 12 bit color mode"
+msgstr ""
+
+msgid "This option allows you to force the HDR10 modes for UHD"
+msgstr ""
+
+msgid "This option allows you to force the HLG modes for UHD"
 msgstr ""
 
 msgid "This option allows you to hide and sort menu entries. When selecting user you can change order and hide menu items via the blue button"
@@ -8590,6 +8837,9 @@ msgstr ""
 msgid "Toggle infoBar"
 msgstr ""
 
+msgid "Toggle new text inserts before or overwrites existing text"
+msgstr ""
+
 msgid "Toggle show/hide"
 msgstr ""
 
@@ -8811,10 +9061,22 @@ msgstr "撤銷刪除"
 msgid "Unencrypted"
 msgstr ""
 
+msgid "Unexpected error while retreiving fallback tuner's timer information"
+msgstr ""
+
 msgid "UnhandledKey"
 msgstr ""
 
 msgid "Unhide parental control services"
+msgstr ""
+
+msgid "Unicable delay after change voltage before switch command"
+msgstr ""
+
+msgid "Unicable delay after enable voltage before switch command"
+msgstr ""
+
+msgid "Unicable delay after last diseqc command"
 msgstr ""
 
 msgid "Uninstall"
@@ -8826,6 +9088,10 @@ msgstr "USA"
 
 msgid "United Kingdom"
 msgstr ""
+
+#, fuzzy
+msgid "United States"
+msgstr "USA"
 
 msgid "United States Minor Outlying Islands"
 msgstr ""
@@ -8848,6 +9114,10 @@ msgstr "解除安裝(Unmount)"
 
 msgid "Unsupported"
 msgstr "不支援的"
+
+#, fuzzy
+msgid "Unzipping Image"
+msgstr "下載中"
 
 msgid "Update"
 msgstr "更新"
@@ -8888,6 +9158,9 @@ msgstr "更新軟體目錄"
 
 msgid "Upgrading"
 msgstr "升級"
+
+msgid "Upper case"
+msgstr ""
 
 msgid "Uruguay"
 msgstr ""
@@ -9047,6 +9320,9 @@ msgstr ""
 msgid "Vanuatu"
 msgstr "手動"
 
+msgid "Various"
+msgstr ""
+
 msgid "Venezuela (Bolivarian Republic of)"
 msgstr ""
 
@@ -9164,6 +9440,12 @@ msgstr ""
 msgid "Virgin Islands (U.S.)"
 msgstr ""
 
+msgid "Virtual KeyBoard Functions"
+msgstr ""
+
+msgid "Virtual KeyBoard Text:"
+msgstr ""
+
 msgid "Virtual keyboard"
 msgstr ""
 
@@ -9274,9 +9556,6 @@ msgid ""
 "Then seek to the end, press OK, select 'end cut'. That's it."
 msgstr ""
 
-msgid "Welcome to the image upgrade wizard. The wizard will assist you in upgrading the firmware of your receiver by providing a backup facility for your current settings and a short explanation of how to upgrade your firmware."
-msgstr ""
-
 msgid ""
 "Welcome.\n"
 "\n"
@@ -9320,6 +9599,9 @@ msgid "When enabled the left, right, CH+/-, B+/-, P+/- buttons will follow the '
 msgstr ""
 
 msgid "When enabled the set top box is able to wakeup on LAN"
+msgstr ""
+
+msgid "When enabled the timer from the fallback tuner is imported"
 msgstr ""
 
 msgid "When enabled then when you select a new channel in the channel selection the channel selection will not close. It will only close when you select the current playing service. This is a kind of preview mode"
@@ -9496,14 +9778,14 @@ msgstr ""
 msgid "When nonzero, a recording will stop later than the ending time indicated by the EPG."
 msgstr ""
 
+msgid "When selected this allows video modes to be selected even if they are not reported as supported."
+msgstr ""
+
 msgid "When the content has an aspect ratio of 16:9, choose whether to scale/stretch the picture."
 msgstr ""
 
 msgid "When the content has an aspect ratio of 4:3, choose whether to scale/stretch the picture."
 msgstr ""
-
-msgid "Where do you want to backup your settings?"
-msgstr "在哪里備份您的設定?"
 
 msgid "Where to save temporary timeshift recordings?"
 msgstr "在哪里保存時光平移臨時錄製的內容?"
@@ -9533,6 +9815,9 @@ msgid "With popup"
 msgstr ""
 
 msgid "Without popup"
+msgstr ""
+
+msgid "Wizard setup"
 msgstr ""
 
 msgid "Wizard to arrange the overscan"
@@ -9603,9 +9888,6 @@ msgstr ""
 msgid "Yes, and delete this movie"
 msgstr "是的，刪除此電影"
 
-msgid "Yes, backup my settings!"
-msgstr "是, 備份我的設定!"
-
 msgid "Yes, delete this movie and return to movie list"
 msgstr ""
 
@@ -9614,12 +9896,6 @@ msgstr ""
 
 msgid "Yes, only from standby"
 msgstr ""
-
-msgid "Yes, perform a shutdown now."
-msgstr "是，立即關機。"
-
-msgid "Yes, restore the settings now"
-msgstr "是，立即還原設定"
 
 msgid "Yes, returning to movie list"
 msgstr "是，返回電影列表"
@@ -9654,6 +9930,9 @@ msgstr "您可以取消刪除."
 msgid "You can continue watching TV etc. while this is running."
 msgstr ""
 
+msgid "You can enable if will be displayed extended EPG description for item."
+msgstr ""
+
 msgid "You can install this plugin."
 msgstr "您可以安裝這個插件."
 
@@ -9662,6 +9941,15 @@ msgstr ""
 
 msgid "You can remove this plugin."
 msgstr "您可以移除這個插件."
+
+msgid "You can set how will be finished movieplayer with 'Exit' button."
+msgstr ""
+
+msgid "You can set selected directory as 'root' directory for movie player."
+msgstr ""
+
+msgid "You can set sorting type for items in movielist."
+msgstr ""
 
 msgid "You cannot delete this!"
 msgstr "這個檔不能刪除!"
@@ -9690,12 +9978,6 @@ msgstr ""
 msgid "You didn't select a channel to record from."
 msgstr ""
 
-msgid "You have chosen to backup your settings. Please press OK to start the backup now."
-msgstr "您已選擇要備份您的設定。請按OK鍵開始備份。"
-
-msgid "You have chosen to restore your settings. Enigma2 will restart after restore. Please press OK to start the restore now."
-msgstr "您已經選擇恢復備份設定.恢復後將重啟Enigma2.請按OK開始恢復備份."
-
 #, python-format
 msgid "You have to wait %s!"
 msgstr "您必須等待 %s !"
@@ -9703,17 +9985,6 @@ msgstr "您必須等待 %s !"
 #, python-format
 msgid "You must switch to the service %s (%s - '%s')!\n"
 msgstr ""
-
-#, fuzzy
-msgid ""
-"You need a PC connected to your receiver. If you need further instructions, please visit the website https://openpli.org\n"
-"Your receiver will now be halted. After you have performed the update instructions from the website, your new firmware will ask you to restore your settings."
-msgstr ""
-"您需要一台PC連接到您的dreambox.通過電腦更新dreambox的韧體.\n"
-"如果您需要進一步的說明請訪問網站http://www.dm7025.de."
-
-msgid "Your backup succeeded. We will now continue to explain the further upgrade process."
-msgstr "備份成功.現在將繼續說明下一步的升級過程."
 
 msgid "Your collection exceeds the size of a single layer medium, you will need a blank dual layer DVD!"
 msgstr "您的收藏超過單層DVD大小,您將需要一個空白雙層DVD！！！"
@@ -9769,9 +10040,6 @@ msgid "Your receiver is rebooting"
 msgstr ""
 
 msgid "Your receiver is shutting down"
-msgstr ""
-
-msgid "Your receiver is shutting down. Please stand by..."
 msgstr ""
 
 msgid "Your receiver might be unusable now. Please consult the manual for further assistance before rebooting your receiver."
@@ -9830,6 +10098,9 @@ msgstr ""
 msgid "Zap to selected channel"
 msgstr ""
 
+msgid "Zap to selected channel and exit GMEPG"
+msgstr ""
+
 msgid "Zap to selected channel, or show detailed event info (depends on configuration)"
 msgstr ""
 
@@ -9845,6 +10116,9 @@ msgid "Zapped to timer service %s!"
 msgstr "編輯自動計時器服務"
 
 msgid "Zgemma H.S/H.2S/H.2H/H5/H7"
+msgstr ""
+
+msgid "Zgemma H9/i55 Plus"
 msgstr ""
 
 msgid "Zgemma Star S/2S/H1/H2"
@@ -10064,6 +10338,9 @@ msgstr "測驗通過"
 msgid "connected"
 msgstr "已連接"
 
+msgid "controlled by HDMI"
+msgstr ""
+
 msgid "cooking"
 msgstr ""
 
@@ -10263,6 +10540,14 @@ msgstr ""
 msgid "football/soccer"
 msgstr ""
 
+#, fuzzy
+msgid "force disabled"
+msgstr "不可用"
+
+#, fuzzy
+msgid "force enabled"
+msgstr "允許"
+
 msgid "foreign countries/expeditions"
 msgstr ""
 
@@ -10304,9 +10589,6 @@ msgstr ""
 
 msgid "help..."
 msgstr "説明..."
-
-msgid "hide"
-msgstr ""
 
 msgid "horizontal"
 msgstr "水準"
@@ -10723,9 +11005,6 @@ msgstr "頻道密碼"
 msgid "set as startup service"
 msgstr ""
 
-msgid "show"
-msgstr ""
-
 msgid "show DVD main menu"
 msgstr "顯示DVD主功能表"
 
@@ -10798,14 +11077,6 @@ msgstr ""
 
 #, python-format
 msgid "slot%s - %s, without backup"
-msgstr ""
-
-#, python-format
-msgid "slot%s - empty, with backup"
-msgstr ""
-
-#, python-format
-msgid "slot%s - empty, without backup"
 msgstr ""
 
 msgid "soap/melodram/folkloric"

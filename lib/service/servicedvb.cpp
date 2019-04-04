@@ -1171,7 +1171,7 @@ void eDVBServicePlay::serviceEvent(int event)
 		updateEpgCacheNowNext();
 
 		/* default behaviour is to start an eit reader, and wait for now/next info, unless this is disabled */
-		if (eConfigManager::getConfigBoolValue("config.usage.show_eit_nownext", true))
+		if (m_dvb_service && m_dvb_service->useEIT() && eConfigManager::getConfigBoolValue("config.usage.show_eit_nownext", true))
 		{
 			ePtr<iDVBDemux> m_demux;
 			if (!m_service_handler.getDataDemux(m_demux))
@@ -1919,14 +1919,14 @@ int eDVBServicePlay::getInfo(int w)
 			return aspect;
 		break;
 	}
+	case sGamma:
+		if (m_decoder) return m_decoder->getVideoGamma();
+		break;
 	case sIsCrypted:
 		if (no_program_info) return false;
 		return program.isCrypted();
 	case sIsDedicated3D:
 		if (m_dvb_service) return m_dvb_service->isDedicated3D();
-		return false;
-	case sHideVBI:
-		if (m_dvb_service) return m_dvb_service->doHideVBI();
 		return false;
 	case sCenterDVBSubs:
 		if (m_dvb_service) return m_dvb_service->doCenterDVBSubs();
@@ -3554,6 +3554,9 @@ void eDVBServicePlay::video_event(struct iTSMPEGDecoder::videoEvent event)
 			break;
 		case iTSMPEGDecoder::videoEvent::eventProgressiveChanged:
 			m_event((iPlayableService*)this, evVideoProgressiveChanged);
+			break;
+		case iTSMPEGDecoder::videoEvent::eventGammaChanged:
+			m_event((iPlayableService*)this, evVideoGammaChanged);
 			break;
 		default:
 			break;
